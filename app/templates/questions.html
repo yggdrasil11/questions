@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+</head>
+<body>
+    <form method="post">
+        <p>{{ question }}</p>
+        <input type="hidden" name="question_index" value="{{ question_index }}">
+        <input type="hidden" name="key" value="{{ key }}">
+        <input type="hidden" name="start_time" value="{{ start_time }}">
+        <label for="answer">Answer (1-5):</label>
+        <input type="number" id="answer" name="answer" min="1" max="5" required>
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
