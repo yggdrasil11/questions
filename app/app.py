@@ -37,7 +37,7 @@ def questions(key):
                            (questions[question_index], answer, start_time, end_time, key))
             conn.commit()
 
-        if question_index + 1 < len(questions):  # Ensure this line has a colon at the end
+        if question_index + 1 < len(questions):
             return render_template('question.html', question=questions[question_index + 1], question_index=question_index + 1, key=key, start_time=end_time)
         else:
             return "Thank you for completing the survey!"
