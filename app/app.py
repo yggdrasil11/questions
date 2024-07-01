@@ -12,7 +12,7 @@ def init_db():
                           start_time TEXT, end_time TEXT, key TEXT)''')
         conn.commit()
 
-@app.route('/', methods=['GET, 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         key = request.form['key']
@@ -37,7 +37,7 @@ def questions(key):
                            (questions[question_index], answer, start_time, end_time, key))
             conn.commit()
 
-        if question_index + 1 < len(questions):
+        if question_index + 1 < len(questions):  # Ensure this line has a colon at the end
             return render_template('question.html', question=questions[question_index + 1], question_index=question_index + 1, key=key, start_time=end_time)
         else:
             return "Thank you for completing the survey!"
